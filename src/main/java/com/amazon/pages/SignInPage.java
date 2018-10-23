@@ -20,9 +20,8 @@ public class SignInPage extends BasePage {
     }
 
     public MainPage signInWithCredentials(String login, String password) {
-        waitForElementDisplayed(emailField);
-        emailField.sendKeys(login);
-        passwordField.sendKeys(password);
+        sendKeys(emailField, login);
+        sendKeys(passwordField, password);
         click(signInButton);
         return new MainPage(driver);
     }

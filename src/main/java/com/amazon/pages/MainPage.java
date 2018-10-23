@@ -42,8 +42,7 @@ public class MainPage extends BasePage {
     }
 
     public SearchPage serchForItem(String item) {
-        waitForElementDisplayed(searchBar);
-        searchBar.sendKeys(item);
+        sendKeys(searchBar, item);
         click(searchButton);
         return new SearchPage(driver);
     }

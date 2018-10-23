@@ -20,6 +20,11 @@ abstract class BasePage {
         element.click();
     }
 
+    void sendKeys(WebElement element, String text) {
+        waitForElementDisplayed(element);
+        element.sendKeys(text);
+    }
+
     /**
      * Waiters
      */
