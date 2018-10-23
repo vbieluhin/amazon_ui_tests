@@ -23,7 +23,7 @@ public class CartPage extends BasePage {
 
     public int getNumberOfItemsInCart() {
         //TODO: remove sleep
-        sleep(600);
+        sleep(800);
         return cartItemImages.size();
     }
 
