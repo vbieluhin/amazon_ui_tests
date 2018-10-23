@@ -6,10 +6,10 @@ import com.amazon.pages.MainPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AddItemToCartTest extends BaseTest {
+public class DeleteItemFromCart extends BaseTest {
 
     @Test
-    public void addItemToCartTest() {
+    public void deleteItemFromTest() {
         String searchItem = "Docker Deep Dive";
 
         MainPage mainPage = new MainPage(driver);
@@ -19,8 +19,9 @@ public class AddItemToCartTest extends BaseTest {
                 .serchForItem(searchItem)
                 .clickOnItemWithText(searchItem)
                 .addItemToCart()
-                .proceedToCart();
+                .proceedToCart()
+                .deleteFirstItemFromCart();
         Assert.assertEquals("Wrong number of items in cart!",
-                1, cartPage.getNumberOfItemsInCart());
+                0, cartPage.getNumberOfItemsInCart());
     }
 }

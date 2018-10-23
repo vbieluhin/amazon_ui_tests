@@ -15,6 +15,12 @@ abstract class BasePage {
         PageFactory.initElements(driver, this);
     }
 
+
+    public MainPage openBaseURL() {
+        driver.get("https://amazon.com");
+        return new MainPage(driver);
+    }
+
     void click(WebElement element) {
         waitForElementDisplayed(element);
         element.click();
@@ -32,5 +38,14 @@ abstract class BasePage {
     void waitForElementDisplayed(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public void sleep(int milliseconds) {
+        System.out.println("Sleeping " + milliseconds + " milliseconds");
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+
+        }
     }
 }

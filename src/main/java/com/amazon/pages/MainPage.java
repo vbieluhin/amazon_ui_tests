@@ -27,11 +27,6 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    public MainPage openBaseURL() {
-        driver.get("https://amazon.com");
-        return this;
-    }
-
     public SignInPage openLoginPage() {
         click(loginPageButon);
         return new SignInPage(driver);
@@ -41,8 +36,8 @@ public class MainPage extends BasePage {
         return userBar.getText().split(" ")[1];
     }
 
-    public SearchPage serchForItem(String item) {
-        sendKeys(searchBar, item);
+    public SearchPage serchForItem(String itemName) {
+        sendKeys(searchBar, itemName);
         click(searchButton);
         return new SearchPage(driver);
     }
