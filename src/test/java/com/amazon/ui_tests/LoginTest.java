@@ -13,6 +13,7 @@ public class LoginTest extends BaseTest {
         String userName = "Test";
 
         MainPage mainPage = new MainPage(driver);
+
         mainPage.openBaseURL()
                 .openLoginPage()
                 .signInWithCredentials(userEmail, userPassword);
