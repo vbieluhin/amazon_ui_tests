@@ -28,6 +28,7 @@ abstract class BasePage {
 
     void sendKeys(WebElement element, String text) {
         waitForElementDisplayed(element);
+        element.clear();
         element.sendKeys(text);
     }
 
