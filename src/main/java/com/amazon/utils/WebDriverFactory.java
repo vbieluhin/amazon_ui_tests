@@ -10,16 +10,14 @@ import java.util.concurrent.TimeUnit;
 public class WebDriverFactory {
 
     private static final long IMPLICIT_WAIT = 2;
-    private static WebDriver driver = getChromeDriver();
+    private static WebDriver driver;
 
-    private static WebDriver initChromeDriver() {
-        WebDriver driver;
+    private static void initChromeDriver() {
         ChromeDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("start-maximized");
         driver = new ChromeDriver(opt);
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
-        return driver;
     }
 
     public static void setChromeDriver() {
