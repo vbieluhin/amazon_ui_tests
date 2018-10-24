@@ -8,10 +8,10 @@ import java.util.List;
 
 public class MainPage extends BasePage {
 
-    @FindBy(xpath = "//*[@id='nav-link-accountList']/span[2]")
+    @FindBy(xpath = "//*[@id='nav-link-accountList']//following-sibling::span[@class='nav-icon nav-arrow']")
     private WebElement loginPageButon;
 
-    @FindBy(xpath = "//*[@id='nav-link-accountList']/span[1]")
+    @FindBy(xpath = "//*[@id='nav-link-accountList']//following-sibling::span[@class='nav-line-1']")
     private WebElement userBar;
 
     @FindBy(xpath = "//*[@class='feed-carousel-card']")
@@ -20,7 +20,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//*[@id='twotabsearchtextbox']")
     private WebElement searchBar;
 
-    @FindBy(xpath = "//*[@id='nav-search']//div[2]//input")
+    @FindBy(xpath = "//input[@class='nav-input' and @type='submit']")
     private WebElement searchButton;
 
     public MainPage(WebDriver driver) {
