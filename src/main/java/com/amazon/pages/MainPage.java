@@ -1,6 +1,5 @@
 package com.amazon.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -23,13 +22,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//input[@class='nav-input' and @type='submit']")
     private WebElement searchButton;
 
-    public MainPage(WebDriver driver) {
-        super(driver);
-    }
-
     public SignInPage openLoginPage() {
         click(loginPageButon);
-        return new SignInPage(driver);
+        return new SignInPage();
     }
 
     public String getUserName() {
@@ -39,6 +34,6 @@ public class MainPage extends BasePage {
     public SearchPage searchForItem(String itemName) {
         sendKeys(searchBar, itemName);
         click(searchButton);
-        return new SearchPage(driver);
+        return new SearchPage();
     }
 }

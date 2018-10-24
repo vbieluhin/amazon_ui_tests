@@ -12,8 +12,8 @@ public class AddItemToCartTest extends BaseTest {
     public void addItemToCartTest() {
         String searchItem = "Docker Deep Dive";
 
-        MainPage mainPage = new MainPage(driver);
-        CartPage cartPage = new CartPage(driver);
+        MainPage mainPage = new MainPage();
+        CartPage cartPage = new CartPage();
 
         mainPage.openBaseURL()
                 .searchForItem(searchItem)

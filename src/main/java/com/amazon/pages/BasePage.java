@@ -1,5 +1,6 @@
 package com.amazon.pages;
 
+import com.amazon.utils.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -11,16 +12,15 @@ abstract class BasePage {
     WebDriver driver;
     private WebDriverWait wait;
 
-    BasePage(WebDriver driver) {
-        this.driver = driver;
+    BasePage() {
+        this.driver = WebDriverFactory.getDriver();
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     }
 
-
     public MainPage openBaseURL() {
         driver.get("https://amazon.com");
-        return new MainPage(driver);
+        return new MainPage();
     }
 
     void click(WebElement element) {

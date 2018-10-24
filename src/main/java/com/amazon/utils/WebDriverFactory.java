@@ -8,15 +8,21 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverFactory {
-    private static final long IMPLICIT_WAIT = 2;
 
-    public static WebDriver setChromeDriver() {
+    private static final long IMPLICIT_WAIT = 2;
+    private static WebDriver driver = setChromeDriver();
+
+    private static WebDriver setChromeDriver() {
         WebDriver driver;
         ChromeDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("start-maximized");
         driver = new ChromeDriver(opt);
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
+        return driver;
+    }
+
+    public static WebDriver getDriver() {
         return driver;
     }
 }

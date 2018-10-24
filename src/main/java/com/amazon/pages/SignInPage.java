@@ -1,6 +1,5 @@
 package com.amazon.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,14 +14,10 @@ public class SignInPage extends BasePage {
     @FindBy(xpath = ".//input[@id='signInSubmit']")
     private WebElement signInButton;
 
-    public SignInPage(WebDriver driver) {
-        super(driver);
-    }
-
     public MainPage signInWithCredentials(String login, String password) {
         sendKeys(emailField, login);
         sendKeys(passwordField, password);
         click(signInButton);
-        return new MainPage(driver);
+        return new MainPage();
     }
 }

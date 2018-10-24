@@ -1,6 +1,5 @@
 package com.amazon.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,10 +15,6 @@ public class CartPage extends BasePage {
 
     @FindBy(xpath = "//input[@value='Delete']")
     private List<WebElement> deleteItemFromCartButtonList;
-
-    public CartPage(WebDriver driver) {
-        super(driver);
-    }
 
     public int getNumberOfItemsInCart() {
         //TODO: remove sleep

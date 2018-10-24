@@ -12,8 +12,8 @@ public class DeleteItemFromCart extends BaseTest {
     public void deleteItemFromTest() {
         String searchItem = "Docker Deep Dive";
 
-        MainPage mainPage = new MainPage(driver);
-        CartPage cartPage = new CartPage(driver);
+        MainPage mainPage = new MainPage();
+        CartPage cartPage = new CartPage();
 
         mainPage.openBaseURL()
                 .searchForItem(searchItem)

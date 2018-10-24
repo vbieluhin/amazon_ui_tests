@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
         String userPassword = "qwerty!";
         String userName = "Test";
 
-        MainPage mainPage = new MainPage(driver);
+        MainPage mainPage = new MainPage();
 
         mainPage.openBaseURL()
                 .openLoginPage()
