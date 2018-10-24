@@ -10,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 public class WebDriverFactory {
 
     private static final long IMPLICIT_WAIT = 2;
-    private static WebDriver driver = setChromeDriver();
+    private static WebDriver driver = getChromeDriver();
 
-    private static WebDriver setChromeDriver() {
+    private static WebDriver initChromeDriver() {
         WebDriver driver;
         ChromeDriverManager.chromedriver().setup();
         ChromeOptions opt = new ChromeOptions();
@@ -20,6 +20,10 @@ public class WebDriverFactory {
         driver = new ChromeDriver(opt);
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
         return driver;
+    }
+
+    public static void setChromeDriver() {
+        driver = initChromeDriver();
     }
 
     public static WebDriver getChromeDriver() {
