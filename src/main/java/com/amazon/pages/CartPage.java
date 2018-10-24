@@ -11,10 +11,10 @@ public class CartPage extends BasePage {
     @FindBy(xpath = "//*[@class='sc-product-image']")
     private List<WebElement> cartItemImages;
 
-    @FindBy(xpath = "//*[@id='activeCartViewForm']//span[1]/span/input")
+    @FindBy(xpath = "//input[@value='Delete']")
     private WebElement deleteItemFromCartButton;
 
-    @FindBy(xpath = "//*[@id='activeCartViewForm']//span[1]/span/input")
+    @FindBy(xpath = "//input[@value='Delete']")
     private List<WebElement> deleteItemFromCartButtonList;
 
     public CartPage(WebDriver driver) {

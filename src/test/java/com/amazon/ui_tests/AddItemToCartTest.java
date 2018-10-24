@@ -16,7 +16,7 @@ public class AddItemToCartTest extends BaseTest {
         CartPage cartPage = new CartPage(driver);
 
         mainPage.openBaseURL()
-                .serchForItem(searchItem)
+                .searchForItem(searchItem)
                 .clickOnItemWithText(searchItem)
                 .addItemToCart()
                 .proceedToCart();

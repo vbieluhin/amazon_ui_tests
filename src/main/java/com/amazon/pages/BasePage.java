@@ -36,7 +36,7 @@ abstract class BasePage {
      * Waiters
      */
 
-    void waitForElementDisplayed(WebElement element) {
+    private void waitForElementDisplayed(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -45,8 +45,6 @@ abstract class BasePage {
         System.out.println("Sleeping " + milliseconds + " milliseconds");
         try {
             Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-
-        }
+        } catch (InterruptedException e) {}
     }
 }

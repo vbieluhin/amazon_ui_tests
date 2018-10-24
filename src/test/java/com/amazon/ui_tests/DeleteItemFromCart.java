@@ -16,7 +16,7 @@ public class DeleteItemFromCart extends BaseTest {
         CartPage cartPage = new CartPage(driver);
 
         mainPage.openBaseURL()
-                .serchForItem(searchItem)
+                .searchForItem(searchItem)
                 .clickOnItemWithText(searchItem)
                 .addItemToCart()
                 .proceedToCart()

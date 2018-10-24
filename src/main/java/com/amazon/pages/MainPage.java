@@ -36,7 +36,7 @@ public class MainPage extends BasePage {
         return userBar.getText().split(" ")[1];
     }
 
-    public SearchPage serchForItem(String itemName) {
+    public SearchPage searchForItem(String itemName) {
         sendKeys(searchBar, itemName);
         click(searchButton);
         return new SearchPage(driver);
