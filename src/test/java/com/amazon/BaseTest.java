@@ -7,8 +7,8 @@ public abstract class BaseTest {
 
     @After
     public void tearDown() {
-        if (WebDriverFactory.getDriver() != null) {
-            WebDriverFactory.getDriver().quit();
+        if (WebDriverFactory.getChromeDriver() != null) {
+            WebDriverFactory.getChromeDriver().quit();
         }
     }
 }

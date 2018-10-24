@@ -9,11 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 abstract class BasePage {
     private static final long EXPLICIT_WAIT = 5;
-    WebDriver driver;
+    private WebDriver driver;
     private WebDriverWait wait;
 
     BasePage() {
-        this.driver = WebDriverFactory.getDriver();
+        this.driver = WebDriverFactory.getChromeDriver();
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     }

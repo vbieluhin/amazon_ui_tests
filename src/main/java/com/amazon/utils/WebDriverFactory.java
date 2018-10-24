@@ -22,7 +22,7 @@ public class WebDriverFactory {
         return driver;
     }
 
-    public static WebDriver getDriver() {
+    public static WebDriver getChromeDriver() {
         return driver;
     }
 }
