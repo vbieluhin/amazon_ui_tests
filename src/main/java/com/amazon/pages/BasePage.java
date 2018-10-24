@@ -9,10 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 abstract class BasePage {
     private static final long EXPLICIT_WAIT = 5;
     WebDriver driver;
+    private WebDriverWait wait;
 
     BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        wait = new WebDriverWait(driver, EXPLICIT_WAIT);
     }
 
 
@@ -37,7 +39,6 @@ abstract class BasePage {
      */
 
     private void waitForElementDisplayed(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
